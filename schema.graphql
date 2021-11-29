@@ -1,0 +1,8 @@
+type Contribution @entity {
+  id: ID!
+  account: String! @index
+  crowdloan: Int! @index
+  amount: BigInt! @index
+  blockNum: Int! @index
+  contributedDate: Date!
+}

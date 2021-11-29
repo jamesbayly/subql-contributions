@@ -1,0 +1,19 @@
+specVersion: 0.0.1
+description: ''
+repository: ''
+schema: ./schema.graphql
+network:
+  endpoint: wss://node-6864769269566398464.jm.onfinality.io/ws?apikey=ae2d2a4f-0a82-4f11-9d47-ea683e0f9f6d
+  # endpoint: wss://kusama.api.onfinality.io/public-ws
+  dictionary: https://api.subquery.network/sq/subquery/dictionary-polkadot
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    startBlock: 1
+    mapping:
+      handlers:
+        - handler: handleCrowdloanContributed
+          kind: substrate/EventHandler
+          filter:
+            module: crowdloan
+            method: Contributed
